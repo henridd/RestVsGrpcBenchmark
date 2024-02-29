@@ -1,0 +1,11 @@
+@RestService_HostAddress = http://localhost:5082
+
+POST {{RestService_HostAddress}}/greet/
+Content-Type: application/json
+Accept: application/json
+
+{
+    "Name": "Doe"
+}
+
+###

@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcProtos";
+
+package greet;
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+
+  rpc GetHello (EmptyRequest) returns (GetHelloReply);
+
+  rpc PostComplex (ComplexRequest) returns (SimpleReply);
+}
+
+message ComplexRequest{
+	int32 intField = 1;
+	string stringField = 2;
+	ComplexRequestSubcontent subField = 3;
+}
+
+message SimpleReply{
+	string message = 1;
+}
+
+message ComplexRequestSubcontent{
+	int32 subField = 1;
+}
+
+message EmptyRequest{
+}
+
+message GetHelloReply{
+  string response = 1;
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
